@@ -23,11 +23,24 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 4000;
 
+app.set('trust proxy', 1);
+
 // Middleware
+const allowedOrigins = [
+  process.env.CLIENT_URL,
+  "http://localhost:5173",
+].filter(Boolean) as string[];
+
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "http://localhost:5173",
-    credentials: true, // cookies uchun muhim!
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error(`CORS: ${origin} not allowed`));
+      }
+    },
+    credentials: true,
   }),
 );
 app.use(express.json());
