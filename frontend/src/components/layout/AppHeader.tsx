@@ -67,7 +67,7 @@ export function AppHeader() {
         enterButton
       />
 
-      <Space>
+      <Space style={{ marginLeft: 'auto' }}>
         <Select
           value={i18n.language.startsWith('uz') ? 'uz' : 'en'}
           onChange={(lang) => i18n.changeLanguage(lang)}
