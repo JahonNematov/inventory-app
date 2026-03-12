@@ -101,7 +101,7 @@ export function AccessTab({ inventory }: { inventory: any }) {
           <AutoComplete
             value={searchQ}
             onChange={setSearchQ}
-            onSelect={(val: string, option: any) => setSelectedUser(option.user)}
+            onSelect={(_val: string, option: any) => setSelectedUser(option.user)}
             placeholder="Search by name or email..."
             style={{ flex: 1 }}
             options={

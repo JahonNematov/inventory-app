@@ -11,7 +11,7 @@ export function SettingsTab({ inventory }: { inventory: any }) {
   const [updateInventory] = useUpdateInventoryMutation()
   const [saving, setSaving] = useState<'idle' | 'saving' | 'saved' | 'conflict'>('idle')
   const [tagSearch, setTagSearch] = useState('')
-  const timerRef = useRef<ReturnType<typeof setTimeout>>()
+  const timerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
 
   const { data: tagSuggestions } = useSearchTagsQuery(tagSearch, { skip: tagSearch.length < 1 })
 

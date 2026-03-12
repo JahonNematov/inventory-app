@@ -12,7 +12,7 @@ interface Props {
   isOwner: boolean
 }
 
-export function ItemsTab({ inventory, canWrite, isOwner }: Props) {
+export function ItemsTab({ inventory, canWrite }: Props) {
   const navigate = useNavigate()
   const [selectedRowKeys, setSelectedRowKeys] = useState<string[]>([])
   const [isFormOpen, setIsFormOpen] = useState(false)

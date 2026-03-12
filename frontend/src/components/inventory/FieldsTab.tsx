@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Button, Form, Input, Select, Switch, Popconfirm, message, Modal, Tag, Typography } from 'antd'
+import { Button, Form, Input, Select, Switch, Popconfirm, message, Modal, Tag } from 'antd'
 import { PlusOutlined, DeleteOutlined } from '@ant-design/icons'
 import {
   DndContext,
@@ -7,7 +7,7 @@ import {
   PointerSensor,
   useSensor,
   useSensors,
-  DragEndEvent,
+  type DragEndEvent,
 } from '@dnd-kit/core'
 import {
   arrayMove,
@@ -22,8 +22,6 @@ import {
   useUpdateFieldMutation,
   useReorderFieldsMutation,
 } from '../../store/api/inventoryApi'
-
-const { Text } = Typography
 
 const FIELD_TYPES = [
   { value: 'STRING', label: '📝 Single-line text', color: 'blue' },

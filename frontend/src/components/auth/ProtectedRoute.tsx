@@ -8,7 +8,7 @@ interface Props {
 }
 
 export function ProtectedRoute({ children, adminOnly = false }: Props) {
-  const { user, isLoading, isAuthenticated, isAdmin } = useAuth()
+  const { isLoading, isAuthenticated, isAdmin } = useAuth()
 
   if (isLoading) return <Spin fullscreen />
   if (!isAuthenticated) return <Navigate to="/login" replace />

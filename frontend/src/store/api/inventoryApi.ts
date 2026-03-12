@@ -24,7 +24,7 @@ export const inventoryApi = createApi({
 
     getInventory: builder.query<any, string>({
       query: (id) => `/inventories/${id}`,
-      providesTags: (result, error, id) => [{ type: 'Inventory', id }],
+      providesTags: (_result, _error, id) => [{ type: 'Inventory', id }],
     }),
 
     createInventory: builder.mutation<any, any>({
@@ -34,7 +34,7 @@ export const inventoryApi = createApi({
 
     updateInventory: builder.mutation<any, { id: string; data: any }>({
       query: ({ id, data }) => ({ url: `/inventories/${id}`, method: 'PATCH', body: data }),
-      invalidatesTags: (result, error, { id }) => [{ type: 'Inventory', id }],
+      invalidatesTags: (_result, _error, { id }) => [{ type: 'Inventory', id }],
     }),
 
     deleteInventory: builder.mutation<void, string>({
@@ -49,7 +49,7 @@ export const inventoryApi = createApi({
         method: 'POST',
         body: data,
       }),
-      invalidatesTags: (result, error, { inventoryId }) => [{ type: 'Inventory', id: inventoryId }],
+      invalidatesTags: (_result, _error, { inventoryId }) => [{ type: 'Inventory', id: inventoryId }],
     }),
 
     updateField: builder.mutation<any, { inventoryId: string; fieldId: string; data: any }>({
@@ -85,7 +85,7 @@ export const inventoryApi = createApi({
         method: 'PUT',
         body: { elements },
       }),
-      invalidatesTags: (result, error, { inventoryId }) => [{ type: 'Inventory', id: inventoryId }],
+      invalidatesTags: (_result, _error, { inventoryId }) => [{ type: 'Inventory', id: inventoryId }],
     }),
 
     // ── Access ─────────────────────────────────────────────
@@ -95,7 +95,7 @@ export const inventoryApi = createApi({
         method: 'POST',
         body: { userId },
       }),
-      invalidatesTags: (result, error, { inventoryId }) => [{ type: 'Inventory', id: inventoryId }],
+      invalidatesTags: (_result, _error, { inventoryId }) => [{ type: 'Inventory', id: inventoryId }],
     }),
 
     removeAccess: builder.mutation<void, { inventoryId: string; userId: string }>({
@@ -103,7 +103,7 @@ export const inventoryApi = createApi({
         url: `/inventories/${inventoryId}/access/${userId}`,
         method: 'DELETE',
       }),
-      invalidatesTags: (result, error, { inventoryId }) => [{ type: 'Inventory', id: inventoryId }],
+      invalidatesTags: (_result, _error, { inventoryId }) => [{ type: 'Inventory', id: inventoryId }],
     }),
 
     // ── Items ──────────────────────────────────────────────
@@ -114,7 +114,7 @@ export const inventoryApi = createApi({
 
     getItem: builder.query<any, string>({
       query: (id) => `/items/${id}`,
-      providesTags: (result, error, id) => [{ type: 'Item', id }],
+      providesTags: (_result, _error, id) => [{ type: 'Item', id }],
     }),
 
     createItem: builder.mutation<any, any>({
@@ -124,7 +124,7 @@ export const inventoryApi = createApi({
 
     updateItem: builder.mutation<any, { id: string; data: any }>({
       query: ({ id, data }) => ({ url: `/items/${id}`, method: 'PATCH', body: data }),
-      invalidatesTags: (result, error, { id }) => [{ type: 'Item', id }],
+      invalidatesTags: (_result, _error, { id }) => [{ type: 'Item', id }],
     }),
 
     deleteItem: builder.mutation<void, string>({
@@ -134,7 +134,7 @@ export const inventoryApi = createApi({
 
     toggleLike: builder.mutation<{ liked: boolean }, string>({
       query: (id) => ({ url: `/items/${id}/like`, method: 'POST' }),
-      invalidatesTags: (result, error, id) => [{ type: 'Item', id }],
+      invalidatesTags: (_result, _error, id) => [{ type: 'Item', id }],
     }),
 
     // ── Comments ───────────────────────────────────────────

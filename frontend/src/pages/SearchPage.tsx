@@ -1,5 +1,5 @@
 import { useSearchParams } from 'react-router-dom'
-import { Table, Tabs, Typography, Tag, Avatar, Space, Spin } from 'antd'
+import { Table, Tabs, Typography, Avatar, Space, Spin } from 'antd'
 import { Link } from 'react-router-dom'
 import { useSearchQuery } from '../store/api/inventoryApi'
 import dayjs from 'dayjs'
