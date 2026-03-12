@@ -1,0 +1,122 @@
+.home-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── Inventory Card ── */
+.inv-card {
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.inv-card-cover-image {
+  height: 130px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.inv-card-cover-placeholder {
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 52px;
+  background: var(--card-gradient, linear-gradient(135deg, #667eea 0%, #764ba2 100%));
+}
+
+.inv-card-body {
+  padding: 16px;
+}
+
+.inv-card-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.inv-card-title {
+  font-size: 14px;
+  display: block;
+  line-height: 1.4;
+}
+
+.inv-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 2px;
+}
+
+.inv-card-owner {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ── Popular List ── */
+.popular-card {
+  border-radius: 12px;
+}
+
+.popular-list-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  transition: background 0.15s;
+}
+
+.popular-list-item:hover {
+  background: #fafafa;
+}
+
+.popular-rank {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.popular-rank-1 { background: #fadb14; color: #fff; }
+.popular-rank-2 { background: #8c8c8c; color: #fff; }
+.popular-rank-3 { background: #d46b08; color: #fff; }
+.popular-rank-n  { background: #f0f0f0; color: #595959; }
+
+.popular-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.popular-title {
+  display: block !important;
+  font-size: 13px !important;
+  color: #1677ff !important;
+}
+
+.popular-owner {
+  font-size: 11px;
+}
+
+.popular-count {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* ── Section header ── */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.section-icon-purple { font-size: 20px; color: #722ed1; }
+.section-icon-red    { font-size: 20px; color: #f5222d; }

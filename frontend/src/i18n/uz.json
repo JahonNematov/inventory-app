@@ -1,0 +1,52 @@
+{
+  "common": {
+    "search": "Inventarlarni qidirish...",
+    "login": "Kirish",
+    "logout": "Chiqish",
+    "save": "Saqlash",
+    "delete": "O'chirish",
+    "cancel": "Bekor qilish",
+    "edit": "Tahrirlash",
+    "add": "Qo'shish",
+    "create": "Yaratish",
+    "loading": "Yuklanmoqda...",
+    "confirm_delete": "Rostan ham o'chirmoqchimisiz?",
+    "yes": "Ha",
+    "no": "Yo'q"
+  },
+  "nav": {
+    "home": "Bosh sahifa",
+    "profile": "Profilim",
+    "admin": "Admin Panel",
+    "logout": "Chiqish"
+  },
+  "inventory": {
+    "title": "Sarlavha",
+    "description": "Tavsif",
+    "category": "Kategoriya",
+    "tags": "Teglar",
+    "items": "Elementlar",
+    "fields": "Maxsus maydonlar",
+    "access": "Kirish huquqi",
+    "stats": "Statistika",
+    "discussion": "Muhokama",
+    "settings": "Sozlamalar",
+    "custom_id": "Maxsus ID",
+    "create": "Inventar yaratish",
+    "my_inventories": "Mening inventarlarim",
+    "shared_inventories": "Menga ulashilgan"
+  },
+  "item": {
+    "create": "Element qo'shish",
+    "edit": "Elementni tahrirlash",
+    "custom_id": "Maxsus ID",
+    "created_by": "Kim yaratgan",
+    "created_at": "Yaratilgan vaqt",
+    "likes": "Yoqtirishlar"
+  },
+  "auth": {
+    "sign_in_with_google": "Google orqali kirish",
+    "sign_in_with_github": "GitHub orqali kirish",
+    "blocked": "Hisobingiz bloklangan. Administrator bilan bog'laning."
+  }
+}
