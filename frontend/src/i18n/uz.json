@@ -44,6 +44,12 @@
     "created_at": "Yaratilgan vaqt",
     "likes": "Yoqtirishlar"
   },
+  "home": {
+    "latest_inventories": "So'nggi inventarlar",
+    "top_popular": "Eng mashhurlar",
+    "no_inventories": "Hali inventar yo'q",
+    "no_data": "Ma'lumot yo'q"
+  },
   "auth": {
     "sign_in_with_google": "Google orqali kirish",
     "sign_in_with_github": "GitHub orqali kirish",

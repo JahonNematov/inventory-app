@@ -2,6 +2,7 @@ import { Row, Col, Card, Tag, Typography, Avatar, Space, Skeleton, Empty } from 
 import { FireOutlined, ClockCircleOutlined, AppstoreOutlined, UserOutlined } from '@ant-design/icons'
 import { Link } from 'react-router-dom'
 import { useGetInventoriesQuery, useGetPopularInventoriesQuery } from '../store/api/inventoryApi'
+import { useTranslation } from 'react-i18next'
 import dayjs from 'dayjs'
 import './HomePage.css'
 
@@ -112,6 +113,7 @@ function PopularItem({ inv, index }: { inv: any; index: number }) {
 }
 
 export default function HomePage() {
+  const { t } = useTranslation()
   const { data: inventoriesData, isLoading }             = useGetInventoriesQuery({})
   const { data: popular,         isLoading: popLoading } = useGetPopularInventoriesQuery()
 
@@ -122,7 +124,7 @@ export default function HomePage() {
         <Col xs={24} lg={16}>
           <div className="section-header">
             <AppstoreOutlined className="section-icon-purple" />
-            <Title level={4} style={{ margin: 0 }}>Latest Inventories</Title>
+            <Title level={4} style={{ margin: 0 }}>{t('home.latest_inventories')}</Title>
           </div>
 
           {isLoading ? (
@@ -132,7 +134,7 @@ export default function HomePage() {
               ))}
             </Row>
           ) : !inventoriesData?.inventories?.length ? (
-            <Empty description="No inventories yet" />
+            <Empty description={t('home.no_inventories')} />
           ) : (
             <Row gutter={[16, 16]}>
               {inventoriesData.inventories.map((inv: any) => (
@@ -148,14 +150,14 @@ export default function HomePage() {
         <Col xs={24} lg={8}>
           <div className="section-header">
             <FireOutlined className="section-icon-red" />
-            <Title level={4} style={{ margin: 0 }}>Top Popular</Title>
+            <Title level={4} style={{ margin: 0 }}>{t('home.top_popular')}</Title>
           </div>
 
           <Card className="popular-card" styles={{ body: { padding: '8px 0' } }}>
             {popLoading ? (
               <Skeleton active paragraph={{ rows: 5 }} style={{ padding: '8px 16px' }} />
             ) : !popular?.length ? (
-              <Empty description="No data" style={{ padding: 24 }} />
+              <Empty description={t('home.no_data')} style={{ padding: 24 }} />
             ) : (
               popular.map((inv: any, i: number) => (
                 <PopularItem key={inv.id} inv={inv} index={i} />
