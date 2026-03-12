@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import { Tabs, Spin, Button, Space, Typography, Tag, Avatar, message } from 'antd'
+import './InventoryPage.css'
 import { DeleteOutlined } from '@ant-design/icons'
 import { useGetInventoryQuery, useDeleteInventoryMutation } from '../store/api/inventoryApi'
 import { useAuth } from '../hooks/useAuth'
@@ -19,10 +20,19 @@ export default function InventoryPage() {
   const { user, isAdmin } = useAuth()
   const [deleteInventory] = useDeleteInventoryMutation()
 
-  const { data: inventory, isLoading } = useGetInventoryQuery(id!)
+  const { data: inventory, isLoading, isError } = useGetInventoryQuery(id!)
 
-  if (isLoading) return <Spin fullscreen />
-  if (!inventory) return <div>Inventory not found</div>
+  if (isLoading) return (
+    <div className="inv-page-loading">
+      <Spin size="large" />
+    </div>
+  )
+  if (isError || !inventory) return (
+    <div className="inv-page-error">
+      <p>Inventory not found or failed to load.</p>
+      <Button onClick={() => navigate('/')}>Go Home</Button>
+    </div>
+  )
 
   const isOwner = user?.id === inventory.ownerId
   const canManage = isOwner || isAdmin
