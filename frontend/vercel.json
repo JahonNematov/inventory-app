@@ -1,0 +1,20 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://inventory-app-production-6794.up.railway.app/api/:path*"
+    },
+    {
+      "source": "/auth/:path*",
+      "destination": "https://inventory-app-production-6794.up.railway.app/auth/:path*"
+    },
+    {
+      "source": "/uploads/:path*",
+      "destination": "https://inventory-app-production-6794.up.railway.app/uploads/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
