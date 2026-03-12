@@ -15,7 +15,7 @@ export function LoginButtons() {
         <Button
           icon={<GoogleOutlined />}
           size="large"
-          onClick={() => (window.location.href = `${import.meta.env.VITE_API_URL}/auth/google`)}
+          onClick={() => (window.location.href = `${import.meta.env.VITE_API_URL || ''}/auth/google`)}
           style={{ width: '100%', background: '#4285f4', color: '#fff', border: 'none' }}
         >
           {t('auth.sign_in_with_google')}
@@ -24,7 +24,7 @@ export function LoginButtons() {
         <Button
           icon={<GithubOutlined />}
           size="large"
-          onClick={() => (window.location.href = `${import.meta.env.VITE_API_URL}/auth/github`)}
+          onClick={() => (window.location.href = `${import.meta.env.VITE_API_URL || ''}/auth/github`)}
           style={{ width: '100%', background: '#24292e', color: '#fff', border: 'none' }}
         >
           {t('auth.sign_in_with_github')}
